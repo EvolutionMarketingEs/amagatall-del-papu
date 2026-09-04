@@ -33,10 +33,13 @@ export async function POST(req: NextRequest) {
   try {
     const id = createBooking(input);
     const manageUrl = new URL(`/reserva/${id}`, getSiteUrl(req)).toString();
-    await Promise.all([
-      sendBookingNotification({ ...input, id }),
-      sendBookingConfirmation({ ...input, id }, manageUrl),
-    ]);
+
+    // Enviados uno detrás del otro (no en paralelo): las cuentas nuevas de
+    // Resend tienen un límite de peticiones por segundo, y disparar los dos
+    // emails en el mismo instante puede hacer que uno de los dos se pierda.
+    await sendBookingNotification({ ...input, id });
+    await sendBookingConfirmation({ ...input, id }, manageUrl);
+
     return NextResponse.json({ id }, { status: 201 });
   } catch (error) {
     if (error instanceof SlotFullError) {
