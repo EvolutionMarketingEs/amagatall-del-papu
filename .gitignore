@@ -30,11 +30,15 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (.env.example sí se versiona: es la plantilla sin secretos)
 .env*
+!.env.example
 
 # vercel
 .vercel
+
+# base de datos local de reservas (no versionar)
+/data/
 
 # typescript
 *.tsbuildinfo
