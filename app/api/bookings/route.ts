@@ -3,6 +3,7 @@ import { bookingSchema } from "@/lib/validation";
 import { createBooking, SlotFullError } from "@/lib/bookings";
 import { sendBookingNotification, sendBookingConfirmation } from "@/lib/mailer";
 import { getSlotsForDate } from "@/lib/slots";
+import { getSiteUrl } from "@/lib/site-url";
 
 export async function POST(req: NextRequest) {
   let body: unknown;
@@ -31,7 +32,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const id = createBooking(input);
-    const manageUrl = new URL(`/reserva/${id}`, req.nextUrl.origin).toString();
+    const manageUrl = new URL(`/reserva/${id}`, getSiteUrl(req)).toString();
     await Promise.all([
       sendBookingNotification({ ...input, id }),
       sendBookingConfirmation({ ...input, id }, manageUrl),

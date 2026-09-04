@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { deleteBooking } from "@/lib/bookings";
+import { getSiteUrl } from "@/lib/site-url";
 
 // Protegido por proxy.ts (Basic Auth, matcher "/api/admin/:path*").
 export async function POST(req: NextRequest) {
@@ -10,5 +11,5 @@ export async function POST(req: NextRequest) {
     deleteBooking(id);
   }
 
-  return NextResponse.redirect(new URL("/admin", req.url), { status: 303 });
+  return NextResponse.redirect(new URL("/admin", getSiteUrl(req)), { status: 303 });
 }
