@@ -88,3 +88,16 @@ export function listAllBookings(): StoredBooking[] {
     .prepare(`SELECT * FROM bookings ORDER BY date ASC, start_time ASC`)
     .all() as StoredBooking[];
 }
+
+/** Busca una reserva por su id (usado por la página pública de gestión/cancelación). */
+export function getBookingById(id: string): StoredBooking | undefined {
+  return getDb().prepare(`SELECT * FROM bookings WHERE id = ?`).get(id) as
+    | StoredBooking
+    | undefined;
+}
+
+/** Elimina una reserva (usado por /admin). Devuelve true si existía. */
+export function deleteBooking(id: string): boolean {
+  const result = getDb().prepare(`DELETE FROM bookings WHERE id = ?`).run(id);
+  return result.changes > 0;
+}

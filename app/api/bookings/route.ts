@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { bookingSchema } from "@/lib/validation";
 import { createBooking, SlotFullError } from "@/lib/bookings";
-import { sendBookingNotification } from "@/lib/mailer";
+import { sendBookingNotification, sendBookingConfirmation } from "@/lib/mailer";
 import { getSlotsForDate } from "@/lib/slots";
 
 export async function POST(req: NextRequest) {
@@ -31,7 +31,11 @@ export async function POST(req: NextRequest) {
 
   try {
     const id = createBooking(input);
-    await sendBookingNotification({ ...input, id });
+    const manageUrl = new URL(`/reserva/${id}`, req.nextUrl.origin).toString();
+    await Promise.all([
+      sendBookingNotification({ ...input, id }),
+      sendBookingConfirmation({ ...input, id }, manageUrl),
+    ]);
     return NextResponse.json({ id }, { status: 201 });
   } catch (error) {
     if (error instanceof SlotFullError) {
