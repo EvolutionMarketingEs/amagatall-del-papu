@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "L'amagatall del Papu · Sitges 2026",
+  title: "L’amagatall del Papu · Sitges 2026",
   description:
     "Escape room immersiu de realitat virtual al Festival Internacional de Cinema Fantàstic de Catalunya. Reserva la teva plaça a l'Espai Joan Tarrida, Sitges.",
 };

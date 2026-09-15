@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <a href="#top" className="font-display text-sm tracking-wide text-text sm:text-base">
+        <a href="#top" className="font-display text-sm text-text sm:text-base">
           {t.header.eventName}
         </a>
 

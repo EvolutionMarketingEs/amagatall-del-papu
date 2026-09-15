@@ -128,32 +128,30 @@ export interface Dictionary {
 export const translations: Record<Locale, Dictionary> = {
   ca: {
     meta: {
-      title: "L'amagatall del Papu · Sitges 2026",
+      title: "L’amagatall del Papu · Sitges 2026",
       description:
         "Escape room immersiu de realitat virtual al Festival Internacional de Cinema Fantàstic de Catalunya. Reserva la teva plaça a l'Espai Joan Tarrida, Sitges.",
     },
     header: {
-      eventName: "L'amagatall del Papu",
+      eventName: "L’amagatall del Papu",
       bookCta: "Reserva",
     },
     hero: {
       eyebrow: "Festival Internacional de Cinema Fantàstic de Catalunya · Sitges 2026",
-      title: "L'amagatall del Papu",
+      title: "L’amagatall del Papu",
       tagline:
-        "Les petjades porten fins a l'armari. A l'altra banda, una dimensió desconeguda t'espera. Travessa-la, supera les proves i ajuda en Pau a retrobar el seu germà.",
+        "Les petjades porten fins a l'armari. A l'altra banda, una dimensió desconeguda t'espera. Travessa-la, supera les proves i ajuda el Pau a retrobar el seu germà.",
       ctaPrimary: "Reserva la teva plaça",
       scrollHint: "Descobreix la història",
     },
     story: {
       heading: "La història",
       paragraphs: [
-        "En Pau es desperta enmig de la nit i descobreix que el seu llit és buit: en Joan, el seu germà petit, ha desaparegut.",
-        "A terra, unes petjades estranyes duen fins a l'armari de l'habitació. És l'amagatall del Papu, l'ésser que s'endú els infants mentre dormen.",
-        "La porta de l'armari s'obre a una altra dimensió... i només tu pots ajudar en Pau a travessar-la, superar les seves quatre proves i portar en Joan de tornada a casa. No trigueu, en Joan us necessita.",
+        "El Pau es desperta enmig de la nit a la seva habitació i descobreix que el Papu, un ésser que es fica a les habitacions dels nens i nenes a la nit i se'ls emporta al seu amagatall, ha segrestat el Joan, el seu germà petit. Les petjades assenyalen clarament en una direcció: l'armari. Us atreviu a travessar aquest portal cap a una dimensió desconeguda i ajudar el Pau a superar les 4 proves que l'ajudaran a retrobar-se amb el seu germà? El Joan us necessita, no trigueu!",
       ],
     },
     whatIsIt: {
-      heading: "Què és L'amagatall del Papu?",
+      heading: "Què és L’amagatall del Papu?",
       subheading: "Una experiència immersiva diferent i coral, creada per l'alumnat d'arts plàstiques i disseny.",
       items: [
         {
@@ -169,8 +167,8 @@ export const translations: Record<Locale, Dictionary> = {
           body: "Supera els quatre reptes de l'amagatall del Papu per obrir el camí de tornada i retrobar-te amb el teu germà.",
         },
         {
-          title: "7 minuts, fins a 7 persones",
-          body: "Cada pase dura 7 minuts i hi pot participar un grup de fins a 7 persones alhora.",
+          title: "10 minuts, fins a 7 persones",
+          body: "Cada torn dura 10 minuts i hi pot participar un grup de fins a 7 persones alhora.",
         },
       ],
     },
@@ -183,13 +181,13 @@ export const translations: Record<Locale, Dictionary> = {
       morningLabel: "Matins: 11.00 – 14.30 h",
       afternoonLabel: "Tardes: 16.00 – 19.30 h",
       sundayNote: "El diumenge 18 d'octubre només hi ha sessió de matí.",
-      capacityNote: "Cada pase dura 7 minuts i té capacitat per a 7 persones.",
+      capacityNote: "Cada torn dura 10 minuts i té capacitat per a 7 persones.",
       ctaSecondary: "Reserva ara",
     },
     booking: {
       heading: "Reserva la teva plaça",
-      subheading: "Tria dia i pase, indica quants sou i confirma les teves dades. Trigaràs menys d'un minut.",
-      stepLabels: ["Dia", "Pase", "Persones", "Dades", "Fet"],
+      subheading: "Tria dia i torn, indica quants sou i confirma les teves dades. Trigaràs menys d'un minut.",
+      stepLabels: ["Dia", "Torn", "Persones", "Dades", "Fet"],
       date: {
         heading: "Quin dia vindràs?",
         helper: "Selecciona un dia del festival, entre el 8 i el 18 d'octubre.",
@@ -197,20 +195,20 @@ export const translations: Record<Locale, Dictionary> = {
       },
       slot: {
         heading: "A quina hora?",
-        helper: "Cada pase dura 7 minuts. Els pases complets apareixen desactivats.",
+        helper: "Cada torn dura 10 minuts. Els torns complets apareixen desactivats.",
         morning: "Matí",
         afternoon: "Tarda",
         full: "Complet",
         seatLeft: "plaça lliure",
         seatsLeft: "places lliures",
         loading: "Carregant disponibilitat…",
-        empty: "No hi ha pases disponibles per a aquest dia.",
+        empty: "No hi ha torns disponibles per a aquest dia.",
         back: "Enrere",
         next: "Continua",
       },
       people: {
         heading: "Quantes persones sou?",
-        helper: (max) => `Places disponibles en aquest pase: ${max}.`,
+        helper: (max) => `Places disponibles en aquest torn: ${max}.`,
         person: "persona",
         people: "persones",
         decrease: "Una persona menys",
@@ -236,12 +234,12 @@ export const translations: Record<Locale, Dictionary> = {
         required: "Aquest camp és obligatori.",
         invalid_email: "Introdueix un correu electrònic vàlid.",
         invalid_phone: "Introdueix un telèfon vàlid.",
-        party_size_max: "Supera les places disponibles en aquest pase.",
+        party_size_max: "Supera les places disponibles en aquest torn.",
         party_size_min: "Cal com a mínim 1 persona.",
         too_long: "Aquest text és massa llarg.",
         privacy_required: "Cal acceptar la política de privacitat.",
-        slot_full: "Aquest pase s'acaba d'omplir. Tria'n un altre, si us plau.",
-        invalid_slot: "Aquest pase ja no és vàlid. Torna a seleccionar-ne un.",
+        slot_full: "Aquest torn s'acaba d'omplir. Tria'n un altre, si us plau.",
+        invalid_slot: "Aquest torn ja no és vàlid. Torna a seleccionar-ne un.",
         server_error: "Hi ha hagut un error. Torna-ho a provar en uns segons.",
         network_error: "No s'ha pogut connectar. Comprova la teva connexió i torna-ho a provar.",
       },
@@ -249,7 +247,7 @@ export const translations: Record<Locale, Dictionary> = {
         heading: "Reserva confirmada!",
         subheading: "T'hem enviat els detalls. Ens veiem a l'amagatall del Papu.",
         dateLabel: "Dia",
-        timeLabel: "Pase",
+        timeLabel: "Torn",
         peopleLabel: "Persones",
         codeLabel: "Codi de reserva",
         newBooking: "Fer una altra reserva",
@@ -257,7 +255,7 @@ export const translations: Record<Locale, Dictionary> = {
       summary: {
         heading: "Resum",
         dateLabel: "Dia",
-        timeLabel: "Pase",
+        timeLabel: "Torn",
         peopleLabel: "Persones",
         edit: "Modificar",
       },
@@ -272,17 +270,17 @@ export const translations: Record<Locale, Dictionary> = {
   },
   es: {
     meta: {
-      title: "El escondite del Papu (L'amagatall del Papu) · Sitges 2026",
+      title: "El escondite del Papu (L’amagatall del Papu) · Sitges 2026",
       description:
         "Escape room inmersivo de realidad virtual en el Festival Internacional de Cine Fantástico de Cataluña. Reserva tu plaza en el Espai Joan Tarrida, Sitges.",
     },
     header: {
-      eventName: "L'amagatall del Papu",
+      eventName: "L’amagatall del Papu",
       bookCta: "Reserva",
     },
     hero: {
       eyebrow: "Festival Internacional de Cine Fantástico de Cataluña · Sitges 2026",
-      title: "L'amagatall del Papu",
+      title: "L’amagatall del Papu",
       tagline:
         "Las huellas llevan hasta el armario. Al otro lado, una dimensión desconocida te espera. Crúzala, supera las pruebas y ayuda a Pau a reencontrarse con su hermano.",
       ctaPrimary: "Reserva tu plaza",
@@ -291,13 +289,11 @@ export const translations: Record<Locale, Dictionary> = {
     story: {
       heading: "La historia",
       paragraphs: [
-        "Pau se despierta en plena noche y descubre que su cama está vacía: Joan, su hermano pequeño, ha desaparecido.",
-        "En el suelo, unas huellas extrañas llevan hasta el armario de la habitación. Es el escondite del Papu, el ser que se lleva a los niños mientras duermen.",
-        "La puerta del armario se abre a otra dimensión... y solo tú puedes ayudar a Pau a cruzarla, superar sus cuatro pruebas y traer a Joan de vuelta a casa. No tardéis, Joan os necesita.",
+        "Pau se despierta en plena noche en su habitación y descubre que el Papu, un ser que se cuela en las habitaciones de los niños y niñas por la noche y se los lleva a su escondite, ha secuestrado a Joan, su hermano pequeño. Las huellas señalan claramente en una dirección: el armario. ¿Os atrevéis a cruzar este portal hacia una dimensión desconocida y ayudar a Pau a superar las 4 pruebas que le ayudarán a reencontrarse con su hermano? Joan os necesita, ¡no tardéis!",
       ],
     },
     whatIsIt: {
-      heading: "¿Qué es L'amagatall del Papu?",
+      heading: "¿Qué es L’amagatall del Papu?",
       subheading: "Una experiencia inmersiva diferente y coral, creada por el alumnado de artes plásticas y diseño.",
       items: [
         {
@@ -313,8 +309,8 @@ export const translations: Record<Locale, Dictionary> = {
           body: "Supera los cuatro retos del escondite del Papu para abrir el camino de vuelta y reencontrarte con tu hermano.",
         },
         {
-          title: "7 minutos, hasta 7 personas",
-          body: "Cada pase dura 7 minutos y puede participar un grupo de hasta 7 personas a la vez.",
+          title: "10 minutos, hasta 7 personas",
+          body: "Cada pase dura 10 minutos y puede participar un grupo de hasta 7 personas a la vez.",
         },
       ],
     },
@@ -327,7 +323,7 @@ export const translations: Record<Locale, Dictionary> = {
       morningLabel: "Mañanas: 11:00 – 14:30 h",
       afternoonLabel: "Tardes: 16:00 – 19:30 h",
       sundayNote: "El domingo 18 de octubre solo hay sesión de mañana.",
-      capacityNote: "Cada pase dura 7 minutos y tiene capacidad para 7 personas.",
+      capacityNote: "Cada pase dura 10 minutos y tiene capacidad para 7 personas.",
       ctaSecondary: "Reserva ahora",
     },
     booking: {
@@ -341,7 +337,7 @@ export const translations: Record<Locale, Dictionary> = {
       },
       slot: {
         heading: "¿A qué hora?",
-        helper: "Cada pase dura 7 minutos. Los pases completos aparecen desactivados.",
+        helper: "Cada pase dura 10 minutos. Los pases completos aparecen desactivados.",
         morning: "Mañana",
         afternoon: "Tarde",
         full: "Completo",

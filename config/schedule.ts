@@ -16,7 +16,7 @@ export const SCHEDULE_CONFIG = {
   afternoonEnd: "19:30",
 
   /** Duración de cada pase, en minutos. */
-  slotDurationMinutes: 7,
+  slotDurationMinutes: 10,
 
   /**
    * Minutos de descanso entre el fin de un pase y el inicio del siguiente.

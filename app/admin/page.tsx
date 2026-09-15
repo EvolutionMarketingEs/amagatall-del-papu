@@ -12,7 +12,7 @@ export default function AdminPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-semibold">Reserves / Reservas — L&apos;amagatall del Papu</h1>
+            <h1 className="text-2xl font-semibold">Reserves / Reservas — L’amagatall del Papu</h1>
             <p className="text-sm text-neutral-400">
               {bookings.length} reserves · {totalPeople} persones en total
             </p>
