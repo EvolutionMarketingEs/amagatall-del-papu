@@ -2,6 +2,7 @@ import { randomUUID } from "crypto";
 import Database from "better-sqlite3";
 import { getDb } from "./db";
 import { SCHEDULE_CONFIG } from "@/config/schedule";
+import { isSlotBlocked } from "./slots";
 import type { BookingInput } from "./validation";
 
 export class SlotFullError extends Error {}
@@ -16,7 +17,12 @@ export function getBookedCount(date: string, startTime: string): number {
   return row.total;
 }
 
+/**
+ * Plazas libres de un pase. Un pase dentro de una franja bloqueada
+ * (BLOCKED_WINDOWS) siempre devuelve 0, igual que si ya estuviera lleno.
+ */
 export function getRemainingSeats(date: string, startTime: string): number {
+  if (isSlotBlocked(date, startTime)) return 0;
   const remaining = SCHEDULE_CONFIG.capacityPerSlot - getBookedCount(date, startTime);
   return Math.max(remaining, 0);
 }

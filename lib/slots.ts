@@ -2,6 +2,7 @@ import {
   SCHEDULE_CONFIG,
   EVENT_DATES,
   SUNDAY_MORNING_ONLY_DATES,
+  BLOCKED_WINDOWS,
 } from "@/config/schedule";
 
 export type Session = "morning" | "afternoon";
@@ -65,6 +66,17 @@ export function getEventDates(): string[] {
 
 export function isEventDate(date: string): boolean {
   return (EVENT_DATES as readonly string[]).includes(date);
+}
+
+/** Cierto si ese pase cae dentro de una franja bloqueada (ver BLOCKED_WINDOWS). */
+export function isSlotBlocked(date: string, startTime: string): boolean {
+  const startMinutes = timeToMinutes(startTime);
+  return BLOCKED_WINDOWS.some(
+    (w) =>
+      w.date === date &&
+      startMinutes >= timeToMinutes(w.from) &&
+      startMinutes < timeToMinutes(w.to)
+  );
 }
 
 /**

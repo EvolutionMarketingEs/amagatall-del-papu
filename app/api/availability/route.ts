@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSlotsForDate, isEventDate } from "@/lib/slots";
-import { getBookedCount } from "@/lib/bookings";
+import { getRemainingSeats } from "@/lib/bookings";
 import { SCHEDULE_CONFIG } from "@/config/schedule";
 
 export const dynamic = "force-dynamic";
@@ -13,8 +13,7 @@ export async function GET(req: NextRequest) {
   }
 
   const slots = getSlotsForDate(date).map((slot) => {
-    const booked = getBookedCount(slot.date, slot.startTime);
-    const remaining = Math.max(SCHEDULE_CONFIG.capacityPerSlot - booked, 0);
+    const remaining = getRemainingSeats(slot.date, slot.startTime);
     return {
       ...slot,
       capacity: SCHEDULE_CONFIG.capacityPerSlot,

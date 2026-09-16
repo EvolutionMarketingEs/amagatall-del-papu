@@ -49,6 +49,18 @@ export const EVENT_DATES = [
  */
 export const SUNDAY_MORNING_ONLY_DATES: readonly string[] = ["2026-10-18"];
 
+/**
+ * Franjas horarias bloqueadas para días concretos. Los pases dentro de estas
+ * franjas aparecen como "Complet" (igual que si ya estuvieran reservados),
+ * pero sin ocupar plazas reales ni ensuciar la lista de reservas del admin.
+ * "to" es exclusivo: { from: "11:00", to: "13:00" } bloquea 11:00-12:50 (con
+ * pases de 10 min), pero deja libre el de las 13:00.
+ * Añade o borra objetos de este array según haga falta.
+ */
+export const BLOCKED_WINDOWS: { date: string; from: string; to: string }[] = [
+  { date: "2026-10-08", from: "11:00", to: "13:00" },
+];
+
 export const VENUE = {
   name: "Espai Joan Tarrida",
   address: "C. Joan Tarrida, 10-12, 08870 Sitges",
