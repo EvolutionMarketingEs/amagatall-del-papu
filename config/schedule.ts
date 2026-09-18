@@ -58,7 +58,10 @@ export const SUNDAY_MORNING_ONLY_DATES: readonly string[] = ["2026-10-18"];
  * Añade o borra objetos de este array según haga falta.
  */
 export const BLOCKED_WINDOWS: { date: string; from: string; to: string }[] = [
-  { date: "2026-10-08", from: "11:00", to: "13:00" },
+  { date: "2026-10-08", from: "11:00", to: "13:00" }, // Alumnes d'illa 80-90
+  { date: "2026-10-09", from: "16:00", to: "16:30" }, // Consellera + acompanyants
+  { date: "2026-10-11", from: "12:00", to: "12:30" }, // Grup 2 (visita escolar)
+  { date: "2026-10-11", from: "12:40", to: "13:40" }, // Grup 1 (visita escolar)
 ];
 
 export const VENUE = {
